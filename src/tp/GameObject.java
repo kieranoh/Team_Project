@@ -15,6 +15,9 @@ class Enemy extends GameObject {
 	int velocity = 1;
 	int health = 1000;
 	int index = 0;
+	int size = 90;
+	int dx = (1000 - size)/10;
+	int dy = (500 - size)/5;
 	int[][] road = new int[][] {
 		{3,0},{3,1},{2,1},{1,1},{0,1},{0,2},{0,3},
 		{1,3},{2,3},{3,3},{4,3},{4,4},{4,5},{3,5},
@@ -28,12 +31,12 @@ class Enemy extends GameObject {
 	void move(MainTower target) {
 		if(index ==0)
 		{
-			this.x =  road[0][1] * 100 ;
-			this.y = 500 - road[0][0] * 100;
+			this.x =  road[0][1] * dx ;
+			this.y = road[0][0] * dy;
 			index = 1;
 
 		}
-		if( (this.x )== road[this.index][1]*100 && (this.y) == 500-road[this.index][0]*100)
+		if( (this.x )== road[this.index][1]*dx && (this.y) == road[this.index][0]*dy)
 		{
 			this.index +=1;
 		}
