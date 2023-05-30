@@ -19,8 +19,10 @@ class Enemy extends GameObject {
 	int dx = (1000 - size)/10;
 	int dy = (500 - size)/5;
 	int[][] road = new int[][] {
-		{4,0},{4,1},{0,1},{0,3},{4,3},{4,5},{0,5},
-		{0,9},{3,9},{3,7},{5,7},{5,9}};
+		{4,0},{4,1},{3,1},{2,1},{1,1},{0,1},{0,2},{0,3},{1,3},
+		{2,3},{3,3},{4,3},{4,4},{4,5},{3,5},{2,5},{1,5},{0,5},
+		{0,6},{0,7},{0,8},{0,9},{1,9},{2,9},{3,9},{3,8},{3,7},
+		{4,7},{5,7},{5,8},{5,9}};
 	Enemy() {
 		this.health = 1000 + Board.round*100;
 		this.visible = false;
@@ -37,7 +39,7 @@ class Enemy extends GameObject {
 		{
 			this.index +=1;
 		}
-		if(index == 11)
+		if(index == 28)
 		{
 			this.attack(target);
 			return;
