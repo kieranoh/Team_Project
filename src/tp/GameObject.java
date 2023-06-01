@@ -13,8 +13,8 @@ class Enemy extends GameObject {
 	int velocity = 2;
 	int health;
 	int index = 0;
-	int size = 90;
-	int dx = ((1000 - size)/9)-1;
+	int size = 100;
+	int dx = ((1000 - size)/9);
 	int dy = (500 - size)/4;
 	Enemy() {
 		this.health = 1000;
@@ -85,6 +85,7 @@ class Bullet extends GameObject {
 				int y2 = (target.y - this.y)*(target.y - this.y);
 				if(x2 + y2 <= 1600)
 				{
+					this.distance = 0;
 					return true;
 				}
 					
