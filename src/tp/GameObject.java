@@ -46,7 +46,7 @@ class Enemy extends GameObject {
 
 class Bullet extends GameObject {
 	int velocity;
-	double direction; //rad형태로 바뀌겠죠.
+	double direction; 
 	double dx;
 	double dy;
 	double distance=0;
@@ -64,11 +64,6 @@ class Bullet extends GameObject {
 			this.dy = -(this.distance * Math.sin(this.direction)/100);
 			this.dx = -(this.distance * Math.cos(this.direction)/100);
 		}
-		System.out.println("distance : "+this.distance);
-		System.out.println("direction : "+this.direction);
-		System.out.println("dx : "+this.dx+", dy : "+this.dy);
-		System.out.println("this.x : "+this.x+", this.y : "+this.y);
-		System.out.println("target.x : "+target.x+", target.y : "+target.y);
 		this.x += (int)this.dx * this.velocity;
 		this.y += (int)this.dy * this.velocity;
 	}
@@ -90,7 +85,6 @@ class Bullet extends GameObject {
 				int y2 = (target.y - this.y)*(target.y - this.y);
 				if(x2 + y2 <= 1600)
 				{
-					System.out.println("hit");
 					return true;
 				}
 					
